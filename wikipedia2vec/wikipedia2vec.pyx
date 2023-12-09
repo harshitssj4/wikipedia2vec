@@ -360,11 +360,13 @@ cdef class Wikipedia2Vec:
                         bar.update(1)
 
             logger.info('Terminating pool workers...')
-
+        print("copying - syn0")
         self.syn0 = self.syn0.copy()
         #syn0_mmap.close()
+        print("copying - syn1")
         self.syn1 = self.syn1.copy()
         #syn1_mmap.close()
+        print("Done copying")
 
         train_params = dict(
             dump_db=dump_db.uuid,
