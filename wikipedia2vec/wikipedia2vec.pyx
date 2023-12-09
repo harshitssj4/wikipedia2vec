@@ -284,7 +284,7 @@ cdef class Wikipedia2Vec:
             link_indices = None
 
         logger.info('Starting to train embeddings...')
-
+        logger.info('Changes are updated')
         exp_table = multiprocessing.RawArray(c_float, EXP_TABLE_SIZE)
         for i in range(EXP_TABLE_SIZE):
             exp_table[i] = <float32_t>exp((i / <float32_t>EXP_TABLE_SIZE * 2 - 1) * MAX_EXP)
